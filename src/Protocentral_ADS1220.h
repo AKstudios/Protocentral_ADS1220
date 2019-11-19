@@ -90,6 +90,14 @@ typedef enum
   GAIN_128      = PGA_GAIN_128
 } adsGain_t;
 
+typedef enum
+{
+  CHANNEL_0        = MUX_SE_CH0,
+  CHANNEL_1        = MUX_SE_CH1,
+  CHANNEL_2        = MUX_SE_CH2,
+  CHANNEL_3        = MUX_SE_CH3
+} channel;
+
 class Protocentral_ADS1220
 {
 private:
@@ -138,7 +146,7 @@ private:
       void select_mux_channels(int channels_conf);
       void set_conv_mode_single_shot(void);
       int32_t Read_SingleShot_WaitForData(void);
-      int32_t Read_SingleShot_SingleEnded_WaitForData(uint8_t channel_no);
+      int32_t Read_SingleShot_SingleEnded_WaitForData(channel channel_no);
 
       void internal_reference();
       void external_reference();
