@@ -256,7 +256,7 @@ int32_t Protocentral_ADS1220::Read_SingleShot_WaitForData(void)
     return Read_WaitForData();
 }
 
-int32_t Protocentral_ADS1220::Read_SingleShot_SingleEnded_WaitForData(uint8_t channel_no)
+int32_t Protocentral_ADS1220::Read_SingleShot_SingleEnded_WaitForData(channel channel_no)
 {
     select_mux_channels(channel_no);
     return Read_SingleShot_WaitForData();
