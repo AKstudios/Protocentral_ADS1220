@@ -177,7 +177,7 @@ void Protocentral_ADS1220::select_mux_channels(int channels_conf)
     writeRegister(CONFIG_REG0_ADDRESS,m_config_reg0);
 }
 
-void Protocentral_ADS1220::set_pga_gain(int pgagain)
+void Protocentral_ADS1220::set_pga_gain(adsGain_t pgagain)
 {
     m_config_reg0 &= ~REG_CONFIG0_PGA_GAIN_MASK;
     m_config_reg0 |= pgagain ;
