@@ -78,6 +78,17 @@
 #define MUX_SE_CH2      0xA0
 #define MUX_SE_CH3      0xB0
 
+typedef enum
+{
+  GAIN_1        = PGA_GAIN_1,
+  GAIN_2        = PGA_GAIN_2,
+  GAIN_4        = PGA_GAIN_4,
+  GAIN_8        = PGA_GAIN_8,
+  GAIN_16       = PGA_GAIN_16,
+  GAIN_32       = PGA_GAIN_32,
+  GAIN_64       = PGA_GAIN_64,
+  GAIN_128      = PGA_GAIN_128
+} adsGain_t;
 
 class Protocentral_ADS1220
 {
@@ -123,7 +134,7 @@ private:
       void set_conv_mode_continuous(void);
       void Single_shot_mode_ON(void);
       void set_data_rate(int datarate);
-      void set_pga_gain(int pgagain);
+      void set_pga_gain(adsGain_t pgagain);
       void select_mux_channels(int channels_conf);
       void set_conv_mode_single_shot(void);
       int32_t Read_SingleShot_WaitForData(void);
